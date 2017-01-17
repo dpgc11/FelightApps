@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="com.example.android.felightapps.NavigatorActivity">
+
+    <Button
+        android:id="@+id/btn_benchmarking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Benchmarking"
+        android:drawableRight="@drawable/ic_timer_purple_a700_24dp"
+        android:drawablePadding="8dp"
+        />
+
+    <Button
+        android:id="@+id/btn_flashlight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_benchmarking"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="Flashlight"
+        android:drawableRight="@drawable/ic_flash_on_red_a400_24dp"
+        android:drawablePadding="8dp"
+        />
+
+    <Button
+        android:id="@+id/btn_instagram_clone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_flashlight"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="Instagram Clone"
+        android:drawableRight="@drawable/ic_insert_photo_green_900_24dp"
+        android:drawablePadding="8dp"
+        />
+
+    <Button
+        android:id="@+id/btn_calculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_instagram_clone"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="Calculator"
+        android:drawableRight="@drawable/ic_subtitles_cyan_a700_24dp"
+        android:drawablePadding="8dp"
+        />
+
+
+</RelativeLayout>

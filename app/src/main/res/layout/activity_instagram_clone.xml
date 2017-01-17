@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/iv_original_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:src="@drawable/imge"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_reset_effects"
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/imge"/>
+
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Original"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_grayScale"
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/imge"/>
+
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Grayscale"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_sepia"
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/imge"/>
+
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Sepia"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_blur"
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/imge"/>
+
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Blur"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    />
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_image5"
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/imge"/>
+
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Grayscale"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_image6"
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/imge"/>
+
+                <TextView
+                    android:layout_width="96dp"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom|center_horizontal"
+                    android:text="Grayscale"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+</LinearLayout>

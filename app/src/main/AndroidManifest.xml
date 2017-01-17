@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.example.android.felightapps">
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-feature android:name="android.hardware.camera2"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".NavigatorActivity">
+
+        </activity>
+        <activity
+            android:name=".AlgorithmBenchmarking.BenchmarkingActivity"
+            android:label="Algorithm Benchmarking">
+        </activity>
+        <activity
+            android:name=".Flashlight.FlashlightActivity"
+            android:label="Flashlight"/>
+        <activity
+            android:name=".InstagramClone.InstagramCloneActivity"
+            android:label="Instagram Clone">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".Calculator.CalculatorActivity"
+            android:label="Calculator">
+        </activity>
+    </application>
+
+</manifest>
