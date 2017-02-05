@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Get Image From Camera"
+        android:id="@+id/menuItem_get_image_from_camera"/>
+    <item android:title="Get Image From Gallery"
+          android:id="@+id/menuItem_get_image_from_gallery"/>
+    <item android:title="Share To Facebook"
+          android:id="@+id/menuItem_share_to_facebook"/>
+    <item android:title="Share To WhatsApp"
+          android:id="@+id/menuItem_share_to_whatsapp"/>
+    <item android:title="Share To Twitter"
+          android:id="@+id/menuItem_share_to_twitter"/>
+</menu>

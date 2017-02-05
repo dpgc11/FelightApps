@@ -1,6 +1,8 @@
 package com.example.android.felightapps.InstagramClone;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorMatrix;
@@ -8,14 +10,21 @@ import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.PopupMenu;
+import android.view.ContextMenu;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.android.felightapps.R;
 
@@ -27,6 +36,9 @@ public class InstagramCloneActivity extends AppCompatActivity {
     private ImageView mBlurImageView;
     private ImageView mResetImageView;
     private Bitmap mOriginalBitmap;
+
+    final int CONTEXT_MENU_ZOOM_IN = 1;
+    final int CONTEXT_MENU_ZOOM_OUT = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +53,37 @@ public class InstagramCloneActivity extends AppCompatActivity {
 
         mOriginalImageView.buildDrawingCache();
         mOriginalBitmap = mOriginalImageView.getDrawingCache();
+
+        mOriginalImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopupMenu popupMenu = new PopupMenu(InstagramCloneActivity.this, mOriginalImageView, Gravity.CENTER);
+                popupMenu.getMenuInflater().inflate(R.menu.instagram_popup_menu, popupMenu.getMenu());
+
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.menuItem_share_to_facebook:
+                                //TODO:
+
+                        }
+                        return true;
+                    }
+                });
+
+                popupMenu.show();
+            }
+        });
+
+        mOriginalImageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                registerForContextMenu(mOriginalImageView);
+                openContextMenu(mOriginalImageView);
+                return true;
+            }
+        });
 
         mGrayScaleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +134,31 @@ public class InstagramCloneActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+//        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("Select Zoom");
+        menu.add(menu.NONE, CONTEXT_MENU_ZOOM_IN, menu.NONE, "Zoom In");
+        menu.add(menu.NONE, CONTEXT_MENU_ZOOM_OUT, menu.NONE, "Zoom Out");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case CONTEXT_MENU_ZOOM_IN:
+                Toast.makeText(getApplicationContext(), "Zoom In selected", Toast.LENGTH_SHORT).show();
+
+                break;
+
+            case CONTEXT_MENU_ZOOM_OUT:
+                Toast.makeText(getApplicationContext(), "Zoom Out selected", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        return super.onContextItemSelected(item);
     }
 
     // Image to Grayscale
@@ -184,5 +252,22 @@ public class InstagramCloneActivity extends AppCompatActivity {
         //Set RGB pixels.
         result.setPixels(pixels, 0, result.getWidth(), 0, 0, result.getWidth(), result.getHeight());
         return result;
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    @SuppressWarnings( "deprecation" )
+    public static Intent shareImage(Context context, String pathToImage) {
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP)
+            shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+        else
+            shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+
+        shareIntent.setType("image/*");
+
+        // For a file in shared storage.  For data in private storage, use a ContentProvider.
+        Uri uri = Uri.fromFile(context.getFileStreamPath(pathToImage));
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        return shareIntent;
     }
 }

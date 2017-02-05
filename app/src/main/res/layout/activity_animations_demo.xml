@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_animations_demo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.android.felightapps.AnimationsDemo.AnimationsDemoActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Rotate"
+            android:layout_weight="1"
+            android:onClick="doAnimation"
+            android:id="@+id/btn_rotate"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Move X"
+            android:layout_weight="1"
+            android:onClick="doAnimation"
+            android:id="@+id/btn_move_x"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Move Y"
+            android:onClick="doAnimation"
+            android:layout_weight="1"
+            android:id="@+id/btn_move_y"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:padding="8dp"
+        android:id="@+id/iv_image_to_animate"
+        android:src="@drawable/gohan"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Alpha"
+            android:onClick="doAnimation"
+            android:layout_weight="1"
+            android:id="@+id/btn_alpha"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Shake"
+            android:onClick="doAnimation"
+            android:layout_weight="1"
+            android:id="@+id/btn_shake"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Wobble"
+            android:onClick="doAnimation"
+            android:layout_weight="1"
+            android:id="@+id/btn_wobble"/>
+
+    </LinearLayout>
+
+</LinearLayout>
