@@ -11,10 +11,12 @@ import android.widget.Button;
 import com.example.android.felightapps.AlgorithmBenchmarking.BenchmarkingActivity;
 import com.example.android.felightapps.AnimationsDemo.AnimationsDemoActivity;
 import com.example.android.felightapps.Calculator.CalculatorActivity;
+import com.example.android.felightapps.FbLogin.FbLoginActivity;
 import com.example.android.felightapps.Flashlight.FlashlightActivity;
 import com.example.android.felightapps.InstagramClone.InstagramCloneActivity;
 import com.example.android.felightapps.Maps.MapsActivity;
 import com.example.android.felightapps.NotificationsDemo.NotificationDemoActivity;
+import com.example.android.felightapps.SMSDemo.SMSDemoActivity;
 import com.example.android.felightapps.ToastDemo.ToastDemoActivity;
 import com.example.android.felightapps.WebViewDemo.WebViewDemoActivity;
 
@@ -29,6 +31,8 @@ public class NavigatorActivity extends AppCompatActivity {
     private Button mAnimationDemoButton;
     private Button mWebViewDemoButton;
     private Button mMapsButton;
+    private Button mSendSMSButton;
+    private Button mFbLoginButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,8 @@ public class NavigatorActivity extends AppCompatActivity {
         mAnimationDemoButton = (Button) findViewById(R.id.btn_animation_demo);
         mWebViewDemoButton = (Button) findViewById(R.id.btn_webview_demo);
         mMapsButton = (Button) findViewById(R.id.btn_maps);
+        mSendSMSButton = (Button) findViewById(R.id.btn_send_sms_activity);
+        mFbLoginButton = (Button) findViewById(R.id.btn_fb_login_activity);
 
         mBenchmarkingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +120,22 @@ public class NavigatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(NavigatorActivity.this, MapsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        mSendSMSButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(NavigatorActivity.this, SMSDemoActivity.class);
+                startActivity(i);
+            }
+        });
+
+        mFbLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(NavigatorActivity.this, FbLoginActivity.class);
                 startActivity(i);
             }
         });

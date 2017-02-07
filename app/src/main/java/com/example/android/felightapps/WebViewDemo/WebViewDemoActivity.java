@@ -38,6 +38,8 @@ public class WebViewDemoActivity extends AppCompatActivity {
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl("https://www.google.co.in");
+//        mWebView.loadUrl("https://www.google.co.in");
+        mWebView.loadUrl("file:///android_asset/google.html");
     }
+
 }

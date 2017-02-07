@@ -1,108 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context="com.example.android.felightapps.NavigatorActivity">
 
-    <Button
-        android:id="@+id/btn_benchmarking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:drawablePadding="8dp"
-        android:drawableRight="@drawable/ic_timer_purple_a700_24dp"
-        android:text="Benchmarking"
-        />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_flashlight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_benchmarking"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:drawablePadding="8dp"
-        android:drawableRight="@drawable/ic_flash_on_red_a400_24dp"
-        android:text="Flashlight"
-        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context="com.example.android.felightapps.NavigatorActivity">
 
-    <Button
-        android:id="@+id/btn_instagram_clone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_flashlight"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:drawablePadding="8dp"
-        android:drawableRight="@drawable/ic_insert_photo_green_900_24dp"
-        android:text="Instagram Clone"
-        />
+        <Button
+            android:id="@+id/btn_benchmarking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_timer_purple_a700_24dp"
+            android:text="Benchmarking"
+            />
 
-    <Button
-        android:id="@+id/btn_calculator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_instagram_clone"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:drawablePadding="8dp"
-        android:drawableRight="@drawable/ic_subtitles_cyan_a700_24dp"
-        android:text="Calculator"
-        />
+        <Button
+            android:id="@+id/btn_flashlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_benchmarking"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_flash_on_red_a400_24dp"
+            android:text="Flashlight"
+            />
 
-    <Button
-        android:id="@+id/btn_toast_demo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_calculator"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:text="Toast Demo"
-        />
+        <Button
+            android:id="@+id/btn_instagram_clone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_flashlight"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_insert_photo_green_900_24dp"
+            android:text="Instagram Clone"
+            />
 
-    <Button
-        android:id="@+id/btn_notification_demo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_toast_demo"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:text="Notification Demo"
-        />
+        <Button
+            android:id="@+id/btn_calculator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_instagram_clone"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/ic_subtitles_cyan_a700_24dp"
+            android:text="Calculator"
+            />
 
-    <Button
-        android:id="@+id/btn_animation_demo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_notification_demo"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:text="Animation Demo"
-        />
+        <Button
+            android:id="@+id/btn_toast_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_calculator"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Toast Demo"
+            />
 
-    <Button
-        android:id="@+id/btn_webview_demo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_animation_demo"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:text="WebView Demo"
-        />
+        <Button
+            android:id="@+id/btn_notification_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_toast_demo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Notification Demo"
+            />
 
-    <Button
-        android:id="@+id/btn_maps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_webview_demo"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:text="Maps"
-        />
+        <Button
+            android:id="@+id/btn_animation_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_notification_demo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Animation Demo"
+            />
+
+        <Button
+            android:id="@+id/btn_webview_demo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_animation_demo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="WebView Demo"
+            />
+
+        <Button
+            android:id="@+id/btn_maps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_webview_demo"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Maps"
+            />
+
+        <Button
+            android:id="@+id/btn_send_sms_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_maps"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Send SMS"
+            />
+
+        <Button
+            android:id="@+id/btn_fb_login_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_send_sms_activity"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Fb Login"
+            />
 
 
-</RelativeLayout>
+    </RelativeLayout>
+</ScrollView>

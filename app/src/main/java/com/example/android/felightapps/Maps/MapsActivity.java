@@ -9,6 +9,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -48,11 +49,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng kuvempuRoadMetroStation = new LatLng(12.9985, 77.5570);
         LatLng srirampuraMetroStation = new LatLng(12.9965, 77.5633);
 
-        mMap.addMarker(new MarkerOptions().position(kempegowdaMetroStation).title("Kempegowda Metro Station"));
-        mMap.addMarker(new MarkerOptions().position(sampigeRoadMetroStation).title("Sampige Road Metro Station"));
-        mMap.addMarker(new MarkerOptions().position(peenyaIndustryMetroStation).title("Peenya Industry Metro Station"));
-        mMap.addMarker(new MarkerOptions().position(kuvempuRoadMetroStation).title("Kuvempu Nagar Metro Station"));
-        mMap.addMarker(new MarkerOptions().position(srirampuraMetroStation).title("Srirampura Metro Station"));
+        mMap.addMarker(new MarkerOptions().position(kempegowdaMetroStation).title("Kempegowda Metro Station").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_train_red_900_24dp)));
+        mMap.addMarker(new MarkerOptions().position(sampigeRoadMetroStation).title("Sampige Road Metro Station").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_train_red_900_24dp)));
+        mMap.addMarker(new MarkerOptions().position(peenyaIndustryMetroStation).title("Peenya Industry Metro Station").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_train_red_900_24dp)));
+        mMap.addMarker(new MarkerOptions().position(kuvempuRoadMetroStation).title("Kuvempu Nagar Metro Station").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_train_red_900_24dp)));
+        mMap.addMarker(new MarkerOptions().position(srirampuraMetroStation).title("Srirampura Metro Station").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_train_red_900_24dp)));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(bangalore));
         mMap.addCircle(new CircleOptions()
                 .center(bangalore)

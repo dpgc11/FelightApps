@@ -4,8 +4,11 @@
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <uses-feature android:name="android.hardware.camera2"/>
+
+
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -63,7 +66,8 @@
         </activity>
         <activity android:name=".WebViewDemo.WebViewDemoActivity">
         </activity>
-        <activity android:name=".Maps.MapsActivity"
+        <activity
+            android:name=".Maps.MapsActivity"
             android:label="Map">
         </activity>
         <!--
@@ -78,7 +82,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key"/>
 
-
+        <activity android:name=".SMSDemo.SMSDemoActivity">
+        </activity>
+        <activity android:name=".FbLogin.FbLoginActivity">
+        </activity>
+        <receiver android:name=".BraodcastReceiver.AirplaneAndBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
