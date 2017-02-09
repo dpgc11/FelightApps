@@ -128,6 +128,26 @@
             android:text="Fb Login"
             />
 
+        <Button
+            android:id="@+id/btn_sensors_list_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_fb_login_activity"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Sensors List"
+            />
+
+        <Button
+            android:id="@+id/btn_sensors_values_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_sensors_list_activity"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="Sensor Values"
+            />
+
 
     </RelativeLayout>
 </ScrollView>

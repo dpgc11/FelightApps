@@ -5,10 +5,10 @@
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 
     <uses-feature android:name="android.hardware.camera2"/>
-
-
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -86,12 +86,28 @@
         </activity>
         <activity android:name=".FbLogin.FbLoginActivity">
         </activity>
+
         <receiver android:name=".BraodcastReceiver.AirplaneAndBootReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.AIRPLANE_MODE"></action>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+        <receiver android:name=".BraodcastReceiver.SMSReceiver">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Sensors.SensorListActivity">
+        </activity>
+        <activity android:name=".Sensors.SensorAccelerometerValuesActivity">
+        </activity>
+        <activity android:name=".Sensors.SensorGravityValuesActivity"></activity>
+        <activity android:name=".Sensors.SensorMagneticFieldValuesActivity"></activity>
+
+        <activity android:name=".Sensors.SensorValuesActivity"></activity>
+        <activity android:name=".Sensors.SensorShakeActivity"></activity>
     </application>
 
 </manifest>
