@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.SEND_SMS"/>
     <uses-permission android:name="android.permission.READ_SMS"/>
     <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <uses-feature android:name="android.hardware.camera2"/>
 
@@ -58,7 +60,6 @@
         <activity android:name=".WelcomeSplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
@@ -67,7 +68,7 @@
         <activity android:name=".WebViewDemo.WebViewDemoActivity">
         </activity>
         <activity
-            android:name=".Maps.MapsActivity"
+            android:name=".Maps.BangaloreMetroStationsActivity"
             android:label="Map">
         </activity>
         <!--
@@ -103,11 +104,29 @@
         </activity>
         <activity android:name=".Sensors.SensorAccelerometerValuesActivity">
         </activity>
-        <activity android:name=".Sensors.SensorGravityValuesActivity"></activity>
-        <activity android:name=".Sensors.SensorMagneticFieldValuesActivity"></activity>
-
-        <activity android:name=".Sensors.SensorValuesActivity"></activity>
-        <activity android:name=".Sensors.SensorShakeActivity"></activity>
+        <activity android:name=".Sensors.SensorGravityValuesActivity"/>
+        <activity android:name=".Sensors.SensorMagneticFieldValuesActivity"/>
+        <activity android:name=".Sensors.SensorValuesActivity"/>
+        <activity android:name=".Sensors.SensorShakeActivity"/>
+        <activity
+            android:name=".Compass.CompassActivity"
+            android:label="Compass">
+        </activity>
+        <activity android:name=".ListViewDemo.ListViewDemoActivity">
+        </activity>
+        <activity android:name=".ListViewDemo.ListViewApps"/>
+        <activity android:name=".ListViewDemo.SensorsListViewActivity">
+        </activity>
+        <activity
+            android:name=".Maps.RouteToHomeActivity"
+            android:label="@string/title_activity_route_to_home">
+        </activity>
+        <activity android:name=".Maps.MapsAppsActivity">
+        </activity>
+        <activity
+            android:name=".Maps.MyLocationActivity"
+            android:label="@string/title_activity_my_location">
+        </activity>
     </application>
 
 </manifest>

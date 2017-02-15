@@ -14,7 +14,8 @@ import com.example.android.felightapps.Calculator.CalculatorActivity;
 import com.example.android.felightapps.FbLogin.FbLoginActivity;
 import com.example.android.felightapps.Flashlight.FlashlightActivity;
 import com.example.android.felightapps.InstagramClone.InstagramCloneActivity;
-import com.example.android.felightapps.Maps.MapsActivity;
+import com.example.android.felightapps.ListViewDemo.ListViewApps;
+import com.example.android.felightapps.Maps.MapsAppsActivity;
 import com.example.android.felightapps.NotificationsDemo.NotificationDemoActivity;
 import com.example.android.felightapps.SMSDemo.SMSDemoActivity;
 import com.example.android.felightapps.Sensors.SensorListActivity;
@@ -37,6 +38,7 @@ public class NavigatorActivity extends AppCompatActivity {
     private Button mFbLoginButton;
     private Button mSensorsListButton;
     private Button mSensorValuesButton;
+    private Button mListViewAppsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +58,7 @@ public class NavigatorActivity extends AppCompatActivity {
         mFbLoginButton = (Button) findViewById(R.id.btn_fb_login_activity);
         mSensorsListButton = (Button) findViewById(R.id.btn_sensors_list_activity);
         mSensorValuesButton = (Button) findViewById(R.id.btn_sensors_values_activity);
+        mListViewAppsButton = (Button) findViewById(R.id.btn_listView_apps_activity);
 
         mBenchmarkingButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -125,7 +128,7 @@ public class NavigatorActivity extends AppCompatActivity {
         mMapsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(NavigatorActivity.this, MapsActivity.class);
+                Intent i = new Intent(NavigatorActivity.this, MapsAppsActivity.class);
                 startActivity(i);
             }
         });
@@ -158,6 +161,14 @@ public class NavigatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(NavigatorActivity.this, SensorValuesActivity.class);
+                startActivity(i);
+            }
+        });
+
+        mListViewAppsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(NavigatorActivity.this, ListViewApps.class);
                 startActivity(i);
             }
         });

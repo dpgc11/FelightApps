@@ -148,6 +148,16 @@
             android:text="Sensor Values"
             />
 
+        <Button
+            android:id="@+id/btn_listView_apps_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_sensors_values_activity"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="ListViewApps"
+            />
+
 
     </RelativeLayout>
 </ScrollView>
