@@ -87,11 +87,6 @@
         <activity android:name=".SMSDemo.SMSDemoActivity">
         </activity>
         <activity android:name=".FbLogin.FbLoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
 
         <receiver android:name=".BraodcastReceiver.AirplaneAndBootReceiver">
@@ -134,6 +129,19 @@
             android:label="@string/title_activity_my_location">
         </activity>
         <activity android:name=".SharedPrefs.SharedPrefsDemoActivity">
+        </activity>
+        <activity android:name=".RegisterActivity">
+        </activity>
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ResetPasswordActivity">
+        </activity>
+        <activity android:name=".AccountSettingsActivity">
         </activity>
     </application>
 

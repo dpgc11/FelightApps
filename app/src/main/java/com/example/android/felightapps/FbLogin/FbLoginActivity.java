@@ -2,6 +2,8 @@ package com.example.android.felightapps.FbLogin;
 
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +37,13 @@ public class FbLoginActivity extends AppCompatActivity {
     private RadioButton mMaleRadioButton;
     private RadioButton mFemaleRadioButton;
     private RadioButton mOtherRadioButton;
+    private SharedPreferences mSharedPreferences;
+    private static final String MY_PREFS = "MyPrefs";
+    private static final String NAME = "nameKey";
+    private static final String PHONE = "phoneKey";
+    private static final String EMAIL = "emailKey";
+    private static final String PASSWORD = "passwordKey";
+
 
     private int year;
     private int month;
@@ -56,6 +65,7 @@ public class FbLoginActivity extends AppCompatActivity {
         mMaleRadioButton = (RadioButton) findViewById(R.id.rb_male);
         mFemaleRadioButton = (RadioButton) findViewById(R.id.rb_other);
         mOtherRadioButton = (RadioButton) findViewById(R.id.rb_female);
+        mSharedPreferences = getSharedPreferences(MY_PREFS, Context.MODE_PRIVATE);
 
         setCurrentDateOnView();
         addListenerOnTextView();
@@ -70,6 +80,37 @@ public class FbLoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        String n  = mNameEditText.getText().toString();
+        String ph  = mPhoneEditText.getText().toString();
+        String e  = mEmailEditText.getText().toString();
+        String pass = mPasswordEditText.getText().toString();
+
+        SharedPreferences.Editor editor = mSharedPreferences.edit();
+
+        editor.putString(NAME, n);
+        editor.putString(PHONE, ph);
+        editor.putString(EMAIL, e);
+        editor.putString(PASSWORD, pass);
+        editor.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mSharedPreferences.contains(NAME))
+            mNameEditText.setText(mSharedPreferences.getString(NAME, ""));
+        if (mSharedPreferences.contains(PHONE))
+            mPhoneEditText.setText(mSharedPreferences.getString(PHONE, ""));
+        if (mSharedPreferences.contains(EMAIL))
+            mEmailEditText.setText(mSharedPreferences.getString(EMAIL, ""));
+        if (mSharedPreferences.contains(PASSWORD))
+            mPasswordEditText.setText(mSharedPreferences.getString(PASSWORD, ""));
+
     }
 
     public void setCurrentDateOnView() {

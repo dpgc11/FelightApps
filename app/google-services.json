@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "657249496877",
+    "firebase_url": "https://heroic-cedar-129607.firebaseio.com",
+    "project_id": "heroic-cedar-129607",
+    "storage_bucket": "heroic-cedar-129607.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657249496877:android:d34929ba6d73493c",
+        "android_client_info": {
+          "package_name": "com.example.android.felightapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "657249496877-8sfplquf9jf8abnemg3tjt3b0gvpat2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.felightapps",
+            "certificate_hash": "3d0493c1745b1d571ed03254d38fc439b9f1bcce"
+          }
+        },
+        {
+          "client_id": "657249496877-gkkb0g2qlg8qvlnchu1qoajpf8mr11d6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvb9G0FtKPWu7c1S00dFLfbO4khmUDiU8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "657249496877-gkkb0g2qlg8qvlnchu1qoajpf8mr11d6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

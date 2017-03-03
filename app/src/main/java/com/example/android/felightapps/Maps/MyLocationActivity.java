@@ -7,8 +7,12 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.android.felightapps.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -18,9 +22,11 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MyLocationActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MyLocationActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap googleMap;
+    double latitude;
+    double longitude;
     private static final int MY_PERMISSIONS_REQUEST_COARSE_LOCATION = 1;
 
     @Override
@@ -39,8 +45,7 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
         int permissionCheck = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_COARSE_LOCATION);
 
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION)
+        if (permissionCheck
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
@@ -67,10 +72,10 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
         googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         // Get latitude of the current location
-        double latitude = myLocation.getLatitude();
+        latitude = myLocation.getLatitude();
 
         // Get longitude of the current location
-        double longitude = myLocation.getLongitude();
+        longitude = myLocation.getLongitude();
 
         // Create a LatLng object for the current location
         LatLng latLng = new LatLng(latitude, longitude);
@@ -102,5 +107,22 @@ public class MyLocationActivity extends FragmentActivity implements OnMapReadyCa
 //        this.googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
 //        this.googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
         setUpMap();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = new MenuInflater(getApplicationContext());
+        inflater.inflate(R.menu.my_location_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menuItem_get_cords:
+                Toast.makeText(getApplicationContext(), "Latitude: " + latitude + "\nLongitude: " + longitude, Toast.LENGTH_LONG).show();
+                break;
+        }
+        return true;
     }
 }
