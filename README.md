@@ -1,4 +1,3 @@
 # FelightApps
-
-needs cleaning
+Firebase non-functional
 
