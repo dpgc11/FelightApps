@@ -1,3 +1,3 @@
 # FelightApps
-Firebase non-functional
+Firebase non-functional(NEed to enable access from the console)
 
