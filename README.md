@@ -1,3 +1,3 @@
 # FelightApps
-Firebase non-functional(Need to enable access from the console)
+Firebase non-functional(Need to update key)
 
